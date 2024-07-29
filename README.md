@@ -1,20 +1,41 @@
-# CryptoClustering
-This is a Python and unsupervised learning analysis to predict if cryptocurrencies are affected by 24-hour or 7-day price changes.
+# Crypto Clustering
 
-The following process was followed:
+This project aims to develop an unsupervised machine learning model for clustering crypto currencies. The model will be trained on a dataset of historical crypto currency market data.
 
-The data was prepared for analysis using the standard scaler from scikit learn.
+## Table of Contents
+- [Introduction](#introduction)
+- [Data](#data)
+- [Methodology](#methodology)
+- [Results](#results)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-The best value for k was found in order to utilize the k-means algorithm for clustering.
+## Introduction
+Unsupervised machine learning clustering is important because hidden patterns can be discovered. This can lead to new insights and understanding of the crypto currency data. Clustering can be used to detect outliers or anomalies as well. Clustering can be used to simplify a large dataset making the data easier to analyze and visualize.
 
-The crypto currencies were then clustered and plotted using hvplots.
+## Data
+The dataset used for this project consists of historical crypto currency market data, including features such as coin id, price changes as a percentage for 24 hours, 7 days, 14 days, 30 days, 60 days, 200 days and 1 year. The dataset is preprocessed and split into training and testing sets to train and evaluate the model.
 
-Next, the clusters were opitimized using principal component analysis.
+## Methodology
+After preparing the original dataset using SKLearn's Standard Scaler, the optimal value for "k" was found using the "elbow curve" inertia methology. The optimal value for "k" was determined to be four. A K-Means was fit to the scaled data and scatter plot was used to depict the clustered coin ids.
 
-Again, the best value for k was determined.
+Principal component analysis was used to reduce the number of input features in the dataset to three input features allowing for easier visualization and reducing the noise in the dataset by discarding components that capture less variance. A k value using the "elbow curve" inertia methodology was used again and the optimal value for "k" was determined to be four again.
 
-The crypto currencies were clustered using K-means using the principal component data.
+Finally, the K-means cluster visualizations for the original data set and the principal component analysis were compared. 
 
-Finally, a comparison between the first k-means cluster and the second principal component cluster analyses was made.
+## Results
 
-A conclusion as to the best method was stated.
+After visually analyzing the cluster analysis results, the PCA clustering algorithm produces more distinct clusters. The Calinski-Harabasz Index is higher for the PCA algorithm further reinforcing the conclusion of the visual analysis.
+
+## Usage
+To use this project, follow these steps:
+1. Clone the repository: `git clone https://github.com/gmmarsh/credit_risk_classification.git`
+2. Install the required dependencies: `pip install -r requirements.txt`
+3. Run the main script: `Crypto_Clustering.ipynb`
+
+## Contributing
+Contributions to this project are welcome. If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
